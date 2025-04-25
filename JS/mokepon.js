@@ -1,10 +1,12 @@
 
 function seleccionarMascota()
 {
-    let capipepo = document.getElementById('capipepo')
-    let ratigueya = document.getElementById('ratigueya')
-    let hipodogue = document.getElementById('hipodogue')
-    
+    let $ = (id) => document.getElementById(id)
+    let capipepo = $('capipepo')
+    let ratigueya = $('ratigueya')
+    let hipodogue = $('hipodogue')
+    let langostelvis = $('langostelvis')
+    let tucapalma = $('tucapalma')
     if (hipodogue.checked)
     {
         alert('has seleccionado a Hipodogue')
@@ -14,12 +16,22 @@ function seleccionarMascota()
         alert('has seleccionado a Ratigueya')
     }
     else if (capipepo.checked)
-    {
+    { 
         alert('has seleccionado a capipepo')
     }
+    else if (langostelvis.checked)
+    { 
+        alert('has seleccionado a Langostelvis')
+    }
+    else if (tucapalma.checked)
+    { 
+        alert('has seleccionado a Tucapalma')
+    }
+       
     else{
         alert('Debes seleccionar una mascota para continuar')
     }
+    
 
 }
 function iniciarJuego()
