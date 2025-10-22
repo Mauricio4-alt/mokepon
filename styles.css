@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Limelight&family=WDXL+Lubrifont+TC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Limelight&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=WDXL+Lubrifont+TC&display=swap');
+
+body{
+    font-family: "WDXL Lubrifont TC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #6A9C89;
+}
+    
+
+
+
+.titulo
+{
+    color: #ECE852;
+    width: 310px;
+    height: 50px;
+    font-size: 40px;
+    
+}
+.subtitulo
+{
+
+    font-size: 16px;
+    text-align: center;
+}
+.select
+{
+    display:none;
+}
+.select:checked + .tarjeta-de-mokepon{
+    background-color:#F97A00;
+}
+#seleccionar-mascota
+{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    
+    align-items: center;
+    
+    
+}
+.tarjetas,.botones-ataque
+{
+    display: flex;
+    gap: 10px;
+    
+}
+.tarjeta-de-mokepon
+{
+    width: 231px;
+    height: 100px;
+    background-color: #FFA725;;
+    padding: 10px;
+    
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    /* margin: 10px; */
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-de-mokepon img 
+{
+    width: 52px;
+    height: 56px;
+}
+.boton
+{
+
+    width: 12vw;
+    height: 4vh;
+    background: #FFC145;
+    color:#3f2817;
+    margin-top: 10px;
+    
+}
+#boton-mascota
+{
+    width: 152px;
+    height: 42px;
+    border: 2px solid #FFC145;
+    /* background-color: transparent; */
+    border-radius: 50px;
+    font-family: "WDXL Lubrifont TC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+
+}
+#seleccionar-ataque{
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.boton-ataque
+{
+    box-sizing: border-box;
+    padding: 7px;
+    border-color: transparent;
+    background: #FFC145;
+    border-radius: 26px;
+    width: 103px;
+    height: 36px;
+    font-family: "WDXL Lubrifont TC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+#mensajes
+{
+    background-color: #16610E;
+    width: 250px;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#boton-reiniciar
+{
+    background-color: transparent;
+    border: transparent;
+    font-family: "WDXL Lubrifont TC", sans-serif;
+}
+.ataques{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    text-align: center;
+}
+@media (max-width:360px){
+    .tarjetas, .botones-ataque{
+        flex-direction: column;
+    }
+    
+}

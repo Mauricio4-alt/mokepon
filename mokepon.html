@@ -3,52 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Mokepon!</title>
-    <script src="./JS/mokepon.js" ></script>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h1>Mokepon! 🔥💧🌱</h1>
     
     <section id="seleccionar-mascota">
-        <h2>Elige a tu mascota:</h2>
-            
-            <input  type="radio" name="mascota" id="hipodogue" />
-            <label for="hipodogue"> hipodogue </label>  <br>  
-            
-            <input  type="radio" name="mascota" id="capipepo"/>
-            <label for="capipepo"> Capipepo </label>  <br>
-            
-            <input  type="radio" name="mascota" id="ratigueya"/>
-            <label for="ratigueya"> Ratigueya </label>  <br>
-            
-            <input  type="radio" name="mascota" id="langostelvis"/>
-            <label for="langostelvis"> Langostelvis </label>  <br>
-            
-            <input  type="radio" name="mascota" id="tucapalma"/>
-            <label for="tucapalma"> Tucapalma </label> <br>
-        
-        
-        
-        <button id="boton-mascota">Seleccionar</button>
+        <h1 class="titulo">Mokepon!</h1>
+        <h2 class="subtitulo">Elige a tu mascota</h2>
+        <div id="contenedorTarjetas" class="tarjetas"></div>
+        <button id="boton-mascota" class="boton">Seleccionar</button>
     </section>
+
     <section id="seleccionar-ataque">
-        <p>Tu mascota tiene <span> 3 </span> vidas</p>
-        <p>La mascota del enemigo tiene <span> 3 </span> vidas</p>
-        <p>
-            <h2>Selecciona tu ataque: </h2>
-            <button id="boton-fuego">Fuego 🔥</button>
-            <button id="boton-agua">Agua 💧</button>
-            <button id="boton-tieera">Tierra 🌱</button>
-        </p>
+        <h2 class="subtitulo">Selecciona un ataque</h2>
+        
+        <div class="botones-ataque" id="botones-ataque">
+           
+        </div>
+        
+        <div id="mensajes">
+            <p id="resultado">Mucha suerte</p>
+            <section id="reiniciar">
+                <button id="boton-reiniciar" class="boton">Reiniciar</button>
+            </section>
+        </div>
+        
+        <div class="ataques">
+            <div>
+                <p id="mascota-jugador"></p>
+                <p id="vidas-jugador">3</p>
+                <div id="ataque-jugador"></div>
+            </div>
+            <div>
+                <p id="mascota-enemigo"></p>
+                <p id="vidas-oponente">3</p>
+                <div id="ataque-enemigo"></div>
+            </div>
+        </div>
     </section>
-    <section id="mensajes">
-        <p>tu mascota atacó con Fuego</p>
-        <p>La mascota del enemigo atacó con tierra</p>
-        <p>Ganaste 🎉</p>
-    </section>
-    <section id="reiniciar">
-        <button boton="reiniciar">Reiniciar</button>
-    </section>
-    
-    
+
+    <script src="./JS/mokepon.js"></script>
 </body>
 </html>
