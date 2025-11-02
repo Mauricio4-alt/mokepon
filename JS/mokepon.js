@@ -31,13 +31,16 @@ let ataqueJugador = []
 let ataqueEnemigo =[] 
 let vidasJugador = 0
 let vidasEnemigo = 0
+let victoriasJugador = 0
+let victoriasOponente = 0
+
 let ataquesMascotaJugador 
 let ataquesMascotaEnemigo =[]
 
 let claseBotonesAtaques 
  
-spanVidasJugador.innerText = vidasJugador
-spanVidasOponente.innerText = vidasEnemigo
+spanVidasJugador.innerText = victoriasJugador
+spanVidasOponente.innerText = victoriasOponente
 
 class Mokepon{
     constructor(nombre,foto,vida)
@@ -55,6 +58,7 @@ let mokepones = []
 let hipodogue = new Mokepon('Hipodoge','./assets/mokepons_mokepon_hipodoge_attack.webp',10)
 let capipepo = new Mokepon('Capipepo','./assets/mokepons_mokepon_capipepo_attack.webp',10)
 let ratigueya = new Mokepon('Ratigueya','./assets/mokepons_mokepon_ratigueya_attack.webp',10)
+let tucapalma = new Mokepon('Tucapalma','assets/tucapalma.png',10)
 hipodogue.ataques.push(
     
         {nombre:'💧',id:'Agua'},
@@ -79,7 +83,15 @@ ratigueya.ataques.push(
         {nombre:'💧',id:'Agua'}
         
 )
-mokepones.push(hipodogue,ratigueya,capipepo)
+tucapalma.ataques.push(
+    {nombre:'🌱',id:'Tierra'},
+    {nombre:'🌱',id:'Tierra'},
+    {nombre:'🌱',id:'Tierra'},
+    {nombre:'💧',id:'Agua'},
+    {nombre:'💧',id:'Agua'},
+
+)
+mokepones.push(hipodogue,ratigueya,capipepo,tucapalma)
 
 function botonAtaque(e){
     let element= e.target
@@ -96,12 +108,12 @@ function botonAtaque(e){
 function revisarVidas()
 {   
     
-    if (vidasJugador === vidasEnemigo)
+    if (victoriasJugador === victoriasOponente)
     {
         crearMensajeFinal('¡Empate 🤷‍♀️!')
         
         
-    } else if(vidasJugador > vidasEnemigo) {
+    } else if(victoriasJugador > victoriasOponente) {
         crearMensajeFinal('¡Felicidades! has ganado, ¿quiere volver a intentarlo?')
 
     }
@@ -123,14 +135,14 @@ function combate(){
         else if ((ataqueJugador[index] =='Fuego' && ataqueEnemigo[index]=='Tierra') || (ataqueJugador[index]=='Agua' && ataqueEnemigo[index]=='Fuego') ||(ataqueJugador[index]=='Tierra' && ataqueEnemigo[index]=='Agua'))
         {
             crearMensaje('Ganaste 🎉',index )
-            vidasJugador ++
-            spanVidasJugador.innerText = vidasJugador
+            victoriasJugador ++
+            spanVidasJugador.innerText = victoriasJugador
         }
         else
         {
             crearMensaje('Perdiste 😔',index)
-            vidasEnemigo++
-            spanVidasOponente.innerText = vidasEnemigo
+            victoriasOponente++
+            spanVidasOponente.innerText = victoriasOponente
         }
     }
     revisarVidas()
